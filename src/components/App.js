@@ -11,16 +11,18 @@ class App extends Component {
                     <Link to="/">Home</Link>
                     <Link to="/about">About</Link>
                     <Switch>
-                        <Route path="/">
-                            <Home />
-                        </Route>
                         <Route path="/about">
                             <About />
                         </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+
                         <Route path="*">
                             <div>No match</div>
                         </Route>
                     </Switch>
+                    <LocationDisplay />
                 </div>
             </BrowserRouter>
         )
@@ -49,16 +51,12 @@ export const About = class About extends Component {
     }
 }
 // export About;
-export const LocationDisplay  = class LocationDisplay  extends Component {
-    constructor(props){
-        super(props);
-        let location = useLocation();
-    }
-    render() {
-        return (
-            <div>
-                {location.pathname}
-            </div>
-        )
-    }
+export const LocationDisplay = () => {
+    let location = useLocation();
+    return (
+        <div data-testid="location-display">
+            {location.pathname}
+        </div>
+    )
+
 }
