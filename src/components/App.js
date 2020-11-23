@@ -6,7 +6,7 @@ class App extends Component {
     render() {
 
         return (
-            // <BrowserRouter>
+            <BrowserRouter>
                 <div id="main">
                     <Link to="/">Home</Link>
                     <Link to="/about">About</Link>
@@ -24,7 +24,7 @@ class App extends Component {
                     </Switch>
                     <LocationDisplay />
                 </div>
-            // </BrowserRouter>
+            </BrowserRouter>
         )
     }
 }
